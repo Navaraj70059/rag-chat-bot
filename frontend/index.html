@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PDF Chat Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- Updated path: now points to css/style.css -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="icon">🤖</div>
+      <h1>DocMind<span>PDF Intelligence</span></h1>
+    </div>
+
+    <div class="divider"></div>
+
+    <div>
+      <div class="section-label">Upload Document</div>
+
+      <div class="drop-zone" id="drop-zone">
+        <input type="file" id="pdf-file" accept=".pdf"/>
+        <div class="drop-icon">📂</div>
+        <div class="drop-text">
+          <strong>Drop your PDF here</strong>
+          or click to browse
+        </div>
+      </div>
+
+      <div id="file-name"></div>
+
+      <br/>
+
+      <button class="btn btn-primary" id="process-btn">
+        <div class="spinner" id="process-spinner"></div>
+        <span id="process-label">⚡ Process Document</span>
+      </button>
+
+      <br/>
+      <div class="status-msg" id="upload-status"></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="docs-section">
+      <div class="section-label">Indexed Documents</div>
+      <div id="docs-list">
+        <div class="no-docs">No documents indexed yet.</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="main">
+    <div class="chat-header">
+      <div class="status-dot"></div>
+      <h2>PDF Chat Assistant</h2>
+      <div class="sub">Powered by local RAG · FastAPI backend</div>
+    </div>
+
+    <div id="messages">
+      <div class="welcome-state" id="welcome">
+        <div class="big-icon">💬</div>
+        <h3>Ask anything about your PDF</h3>
+        <p>Upload a document on the left, then start a conversation with its contents.</p>
+        <div class="hints">
+          <div class="hint-chip" data-q="Summarize the main points of this document">Summarize document</div>
+          <div class="hint-chip" data-q="List the most important topics covered">Main topics</div>
+          <div class="hint-chip" data-q="What conclusions are drawn?">Conclusions</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-area">
+      <div class="input-wrap">
+        <textarea id="user-input" rows="1" placeholder="Ask a question about your PDF…"></textarea>
+        <button id="send-btn">➤</button>
+      </div>
+      <div class="input-footer">Press Enter to send · Shift+Enter for new line</div>
+    </div>
+  </main>
+</div>
+
+<!-- Updated path: now points to js/main.js -->
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+# ── Environment ──
+venv/
+.env               # contains secrets — never commit this!
+
+# ── Python cache ──
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# ── Generated at runtime (too large / auto-created) ──
+chroma_db/
+!chroma_db/.gitkeep
+
+# ── Model files (too large for git — 4GB+) ──
+models/
+!models/.gitkeep
+
+# ── Temp files created during PDF processing ──
+temp_*.pdf
+
+# ── OS files ──
+.DS_Store
+Thumbs.db
+
+# ── IDE files ──
+.vscode/
+.idea/
