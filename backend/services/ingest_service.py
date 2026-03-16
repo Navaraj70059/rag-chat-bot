@@ -1,6 +1,7 @@
 from backend.services.chroma_service import upsert_documents
 from backend.utils.text_utils import clean_text, chunk_text
-from backend.utils.pdf_utils import generate_file_hash, save_temp_file, delete_file_if_exists,extract_text_from_pdf
+from backend.utils.pdf_utils import extract_text_from_pdf
+from backend.utils.file_utils import generate_file_hash, save_temp_file, delete_file_if_exists
 from backend.config import CHUNK_SIZE, CHUNK_OVERLAP, MAX_PAGES
 
 def ingest_document(file_content: bytes, filename: str) -> dict:
